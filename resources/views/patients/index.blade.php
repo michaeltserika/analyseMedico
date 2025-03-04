@@ -22,6 +22,7 @@
                 <td>{{ $patient->prenom }}</td>
                 <td>{{ $patient->telephone }}</td>
                 <td>
+                    <a href="{{ route('patients.show', $patient) }}" class="btn btn-sm btn-info"><i class="fas fa-eye me-1"></i> Voir</a>
                     <a href="{{ route('patients.edit', $patient) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit me-1"></i> Modifier</a>
                     <form action="{{ route('patients.destroy', $patient) }}" method="POST" style="display:inline;">
                         @csrf

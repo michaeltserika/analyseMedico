@@ -109,6 +109,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('factures.index') }}"><i class="fas fa-file-invoice me-1"></i> Factures</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('stats.index') }}"><i class="fas fa-chart-pie me-1"></i> Statistiques</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     @auth

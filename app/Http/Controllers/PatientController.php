@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Patient;
@@ -22,8 +21,8 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nom' => 'required|string|max:100',
-            'prenom' => 'required|string|max:100',
+            'nom' => 'required|string|max:100|regex:/^[a-zA-ZÀ-ÿ\s]+$/u', // Lettres uniquement
+            'prenom' => 'required|string|max:100|regex:/^[a-zA-ZÀ-ÿ\s]+$/u', // Lettres uniquement
             'date_naissance' => 'required|date',
             'sexe' => 'required|in:M,F',
             'adresse' => 'required|string',
@@ -42,8 +41,8 @@ class PatientController extends Controller
     public function update(Request $request, Patient $patient)
     {
         $request->validate([
-            'nom' => 'required|string|max:100',
-            'prenom' => 'required|string|max:100',
+            'nom' => 'required|string|max:100|regex:/^[a-zA-ZÀ-ÿ\s]+$/u', // Lettres uniquement
+            'prenom' => 'required|string|max:100|regex:/^[a-zA-ZÀ-ÿ\s]+$/u', // Lettres uniquement
             'date_naissance' => 'required|date',
             'sexe' => 'required|in:M,F',
             'adresse' => 'required|string',
